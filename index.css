@@ -1,0 +1,215 @@
+@keyframes pulse{
+  0% {
+    transform: translateY(0);
+  } 
+  100% {
+    transform: translateY(15px);
+  }
+}
+html {
+  height: 100%;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'JetBrains Mono',monospace, Arial, Helvetica, sans-serif;
+}
+.container {
+  max-width: 1480px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.header {
+
+}
+.main {
+  height: 100%;
+}
+.main-landing {
+  height: 100%;
+  background-size: cover;
+  background-image: url(https://giffiles.alphacoders.com/211/211931.gif);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main-landing .content-para {
+  color: #DD1D4A;
+  position: relative;
+  z-index: 1;
+}
+.landing-heading {
+  font-size: 80px;
+  /* overflow: hidden; */
+  /* min-width: 145%; */
+  margin: 0 0 70px 0 ;
+  color: #DD1D4A;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 0px 15px #dd1d4a, 0px 0px 20px #dd1d4a;
+}
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.main-content {
+  min-height: 100%;
+  /* background-color: red; */
+}
+.landing-scroll-btn {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  position: relative;
+  z-index: 1;
+  outline: none;
+}
+.landing-scroll-btn img {
+  max-width: 30px;
+  animation: 1.3s ease-in-out 0.8s infinite alternate pulse;
+}
+.content-para {
+  margin: 0;
+}
+.main-content {
+  background-color: #190f36;
+  padding: 180px 0;
+}
+.content-headline {
+  /* margin: 0 calc((100% - 1375px)/2) 48px; */
+  margin: 0 0 54px 0;
+  font-size: 40px;
+  line-height: 1.3;
+  /* padding: 90px 0 0 0; */
+  color: #e9f031;
+}
+.content-para {
+  color: #e9f031;
+  /* margin: 0 calc((100% - 1375px)/2) */
+}
+.content-cards {
+  margin: 128px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+.content-card {
+  min-height: 350px;
+  position: relative;
+  background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Neokitsch.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  /* border: 2px solid #24b6d0; */
+  /* border: 2px solid #dcd787; */
+  border: 2px solid #24b6d0;
+  box-shadow: 0px 0px 5px #06dbd8;
+  /* box-shadow: 0px 0px 5px #06dbd8; */
+  /* box-shadow: 0px 0px 5px #f7db22; */
+  border-radius: 25px;
+  transition: transform 0.5s linear, box-shadow 0.5s linear;
+}
+.content-card:hover {
+  /* background-color: #24b6d0; */
+  /* background-color: #dcd787; */
+  /* box-shadow: 0px 0px 35px #06dbd8; */
+  /* box-shadow: 0px 0px 35px #f7db22; */
+  box-shadow: 0px 0px 35px #06dbd8;
+  transform: scale(1.15);
+}
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 15, 54, 1);
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 25px;
+}
+.content-card:hover .card-overlay {
+  background-color: rgba(25, 15, 54, 0.65);
+}
+.card-anchor {
+  color: #06dbd8;
+}
+.content-card .card-heading,  .content-card .card-para {
+  text-shadow: 0px 0px 0;
+  transition: text-shadow 0.5s linear;
+}
+.content-card:hover .card-heading,  .content-card:hover .card-para {
+  text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 60px #28f9ff;
+}
+.card-rebel-path {
+  background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Kitsch.jpg');
+  border: 2px solid #dcd787;
+  box-shadow: 0px 0px 5px #f7db22;
+  transition: transform 0.5s linear, box-shadow 0.5s linear;
+  border-radius: 25px 0 25px 0;
+}
+.card-rebel-path .card-overlay {
+  border-radius: 25px 0 25px 0;
+}
+.card-rebel-path:hover {
+  box-shadow: 0px 0px 35px #f7db22;
+  transform: scale(1.15);
+}
+.card-rebel-path .card-anchor {
+  color: #f7db22;
+}
+.card-rebel-path:hover .card-heading, .card-rebel-path:hover .card-para  {
+  text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22, 0 0 60px #f7db22;
+}
+.card-corpo-path {
+  background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Neomilitarism.jpg');
+  border: 2px solid #a2166f;
+  box-shadow: 0px 0px 5px #da1e89;
+  transition: transform 0.5s linear, box-shadow 0.5s linear;
+  border-radius: 0 25px 0 25px;
+}
+.card-corpo-path .card-overlay {
+  border-radius: 0 25px 0 25px;
+}
+.card-corpo-path .card-anchor {
+  color: #cd256a;
+}
+.card-corpo-path:hover {
+  box-shadow: 0px 0px 35px #da1e89;
+  transform: scale(1.15);
+}
+.card-corpo-path:hover .card-heading, .card-corpo-path:hover .card-para {
+  text-shadow: 0px 0px 10px #cd256a, 0 0 40px #cd256a, 0 0 60px #cd256a;
+}
+/* .content-card:hover .card-anchor .card-heading,  .content-card:hover .card-anchor .card-para{
+  text-shadow: 0px 0px 10px #cd256a, 0 0 30px #cd256a;
+} */
+.card-heading, .card-para {
+  margin: 0 0 24px 0;
+  position: relative;
+  z-index: 1;
+}
+.card-img {
+  /* width: 100%; */
+  max-width: 240px;
+  display: none;
+}
+.content-card:hover .card-img {
+  display: block;
+}
