@@ -28,6 +28,10 @@ a {
   margin: 0 auto;
   box-sizing: border-box;
 }
+.front-field-container {
+  position: relative;
+  z-index: 1;
+}
 .header {
 
 }
@@ -80,6 +84,7 @@ a {
   position: relative;
   z-index: 1;
   outline: none;
+  cursor: pointer;
 }
 .landing-scroll-btn img {
   max-width: 30px;
@@ -89,8 +94,19 @@ a {
   margin: 0;
 }
 .main-content {
-  background-color: #190f36;
+  /* background-color: #190f36; */
+  background-image: url('https://i.pinimg.com/originals/0f/88/3e/0f883e6f5db348671c1e26a7dfd2e5f3.gif');
+  background-size: cover;
   padding: 180px 0;
+  position: relative;
+}
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
 }
 .content-headline {
   /* margin: 0 calc((100% - 1375px)/2) 48px; */
@@ -115,6 +131,8 @@ a {
   background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Neokitsch.jpg');
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 15px 30px;
   /* border: 2px solid #24b6d0; */
@@ -131,6 +149,7 @@ a {
   /* background-color: #dcd787; */
   /* box-shadow: 0px 0px 35px #06dbd8; */
   /* box-shadow: 0px 0px 35px #f7db22; */
+  /* justify-content: space-around; */
   box-shadow: 0px 0px 35px #06dbd8;
   transform: scale(1.15);
 }
@@ -147,15 +166,42 @@ a {
 .content-card:hover .card-overlay {
   background-color: rgba(25, 15, 54, 0.65);
 }
-.card-anchor {
-  color: #06dbd8;
-}
+/* .card-anchor {
+  
+} */
 .content-card .card-heading,  .content-card .card-para {
   text-shadow: 0px 0px 0;
+  color: #06dbd8;
   transition: text-shadow 0.5s linear;
+}
+.content-card .card-heading {
+  transition: transform 0.5s linear;
+}
+.content-card:hover .card-heading {
+  transform: translateY(-350%);
 }
 .content-card:hover .card-heading,  .content-card:hover .card-para {
   text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 60px #28f9ff;
+}
+.card-button {
+  position: relative;
+  z-index: 1;
+  padding: 15px 45px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: #28f9ff;
+  outline: none;
+  border: 2px solid #28f9ff;
+  cursor: pointer;
+  transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
+}
+/* .card-button::after {
+  content: "> > >";
+} */
+.content-card:hover .card-button {
+  box-shadow: 0 0 25px #28f9ff;
+  text-shadow: 0 0 20px #28f9ff;
+  transform: translateY(180%);
 }
 .card-rebel-path {
   background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Kitsch.jpg');
@@ -171,11 +217,33 @@ a {
   box-shadow: 0px 0px 35px #f7db22;
   transform: scale(1.15);
 }
-.card-rebel-path .card-anchor {
+.card-rebel-path  .card-heading, .card-rebel-path .card-para{
   color: #f7db22;
+}
+.card-rebel-path  .card-heading {
+  transition: transform 0.5s linear;
+}
+.card-rebel-path:hover .card-heading {
+  transform: translateY(-350%);
 }
 .card-rebel-path:hover .card-heading, .card-rebel-path:hover .card-para  {
   text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22, 0 0 60px #f7db22;
+}
+.card-rebel-path .card-button {
+  position: relative;
+  z-index: 1;
+  padding: 15px 45px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: #f7db22;
+  outline: none;
+  border: 2px solid #f7db22;
+  cursor: pointer;
+  transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
+}
+.card-rebel-path:hover .card-button {
+  box-shadow: 0 0 25px #f7db22;
+  text-shadow: 0 0 20px #f7db22;
 }
 .card-corpo-path {
   background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Neomilitarism.jpg');
@@ -187,7 +255,7 @@ a {
 .card-corpo-path .card-overlay {
   border-radius: 0 25px 0 25px;
 }
-.card-corpo-path .card-anchor {
+.card-corpo-path .card-heading, .card-corpo-path .card-para{
   color: #cd256a;
 }
 .card-corpo-path:hover {
@@ -200,6 +268,23 @@ a {
 /* .content-card:hover .card-anchor .card-heading,  .content-card:hover .card-anchor .card-para{
   text-shadow: 0px 0px 10px #cd256a, 0 0 30px #cd256a;
 } */
+.card-corpo-path .card-button {
+  position: relative;
+  z-index: 1;
+  padding: 15px 45px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: #cd256a;
+  outline: none;
+  border: 2px solid #cd256a;
+  cursor: pointer;
+  transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
+}
+.card-corpo-path:hover .card-button {
+  box-shadow: 0 0 25px #cd256a;
+  text-shadow: 0 0 20px #cd256a;
+  transform: translateY(180%);
+}
 .card-heading, .card-para {
   margin: 0 0 24px 0;
   position: relative;
