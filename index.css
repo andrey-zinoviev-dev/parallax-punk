@@ -115,9 +115,11 @@ a {
   line-height: 1.3;
   /* padding: 90px 0 0 0; */
   color: #e9f031;
+  text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22;
 }
 .content-para {
   color: #e9f031;
+  text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22;
   /* margin: 0 calc((100% - 1375px)/2) */
 }
 .content-cards {
@@ -183,17 +185,31 @@ a {
 .content-card:hover .card-heading,  .content-card:hover .card-para {
   text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 60px #28f9ff;
 }
+.button-wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 60%);
+  background-color: #28f9ff;
+  border: 2px solid #28f9ff; 
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s linear;
+}
+.content-card:hover .button-wrapper {
+  transform: translateY(180%);
+}
 .card-button {
   position: relative;
   z-index: 1;
   padding: 15px 45px;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,0);
+  /* border-radius: 20px; */
+  /* background-color: rgba(0,0,0,0); */
+  background: rgba(25, 15, 54, 1);
   color: #28f9ff;
   outline: none;
-  border: 2px solid #28f9ff;
+  border: none;
+  /* border: 2px solid #28f9ff; */
   cursor: pointer;
   transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 60%);
 }
 /* .card-button::after {
   content: "> > >";
@@ -201,7 +217,6 @@ a {
 .content-card:hover .card-button {
   box-shadow: 0 0 25px #28f9ff;
   text-shadow: 0 0 20px #28f9ff;
-  transform: translateY(180%);
 }
 .card-rebel-path {
   background-image: url('https://www.gamesatlas.com/images/cyberpunk2077/styles/Cyberpunk2077-Styles-Kitsch.jpg');
@@ -229,15 +244,21 @@ a {
 .card-rebel-path:hover .card-heading, .card-rebel-path:hover .card-para  {
   text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22, 0 0 60px #f7db22;
 }
+.card-rebel-path .button-wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 60%);
+  background-color: #f7db22;
+  border: 2px solid #f7db22; 
+}
 .card-rebel-path .card-button {
   position: relative;
   z-index: 1;
   padding: 15px 45px;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,0);
+  /* border-radius: 20px; */
+  /* background-color: rgba(0,0,0,0); */
+  background: rgba(25, 15, 54, 1);
   color: #f7db22;
   outline: none;
-  border: 2px solid #f7db22;
+  /* border: 2px solid #f7db22; */
   cursor: pointer;
   transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
 }
@@ -268,22 +289,28 @@ a {
 /* .content-card:hover .card-anchor .card-heading,  .content-card:hover .card-anchor .card-para{
   text-shadow: 0px 0px 10px #cd256a, 0 0 30px #cd256a;
 } */
+.card-corpo-path .button-wrapper {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 60%);
+  background-color: #cd256a;
+  border: 2px solid #cd256a; 
+}
 .card-corpo-path .card-button {
   position: relative;
   z-index: 1;
   padding: 15px 45px;
-  border-radius: 20px;
-  background-color: rgba(0,0,0,0);
+  /* border-radius: 20px; */
+  /* background-color: rgba(0,0,0,0); */
+  background: rgba(25, 15, 54, 1);
   color: #cd256a;
   outline: none;
-  border: 2px solid #cd256a;
+  /* border: 2px solid #cd256a; */
   cursor: pointer;
   transition: box-shadow 0.5s linear, text-shadow 0.5s linear, transform 0.5s linear;
 }
 .card-corpo-path:hover .card-button {
   box-shadow: 0 0 25px #cd256a;
   text-shadow: 0 0 20px #cd256a;
-  transform: translateY(180%);
+  /* transform: translateY(180%); */
 }
 .card-heading, .card-para {
   margin: 0 0 24px 0;
