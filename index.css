@@ -6,6 +6,137 @@
     transform: translateY(15px);
   }
 }
+@keyframes changeBg{
+ 0% {
+   opacity: 0.2;
+ }
+ 5% {
+   opacity: 0.5;
+ }
+ 15% {
+   opacity: 0.2;
+ }
+ 19% {
+   opacity: 1;
+ }
+ 25% {
+   opacity: 0.3;
+ }
+ 39% {
+   opacity: 0.2;
+ }
+ 45% {
+   opacity: 0.9;
+ }
+ 50% {
+   opacity: 0.2;
+ }
+ 75% {
+   opacity: 0.5;
+ }
+ 90% {
+   opacity: 0.3;
+ }
+ 100% {
+   opacity: 1;
+ }
+}
+@keyframes fadeOutBg{
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  39% {
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes transformBeforeImg {
+  10%, 40%, 50%, 65%, 70%, 85%, 90% {
+    --left: 0;
+  }
+  20% {
+    --left: 0.5;
+  }
+  30% {
+    --left: 0.4;
+    --v-height: 20%;
+    --top: 3;
+  }
+  60% {
+    --left: 0.6;
+    --v-height: 25%;
+    --top: 6;
+  }
+  75% {
+    --left: 0.3;
+    --v-height: 5%;
+    --top: 8;
+  }
+  80% {
+    --left: 0.7;
+    --v-height: 15%;
+    --top: 4;
+  }
+  100% {
+    --left: 0.85;
+    --v-height: 30%;
+    --top: 1;
+  }
+}
+@keyframes shiftSign {
+  0% {
+    fill: #655f61;
+  }
+  50% {
+    fill: #190f36;
+  }
+  100% {
+    fill: #655f61;
+  }
+}
+@keyframes smoothBgTransition {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  30% {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  60% {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  80% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
 html {
   height: 100%;
 }
@@ -36,10 +167,11 @@ a {
 
 }
 .main {
-  height: 100%;
+  /* height: 100%; */
 }
 .main-landing {
-  height: 100%;
+  /* height: 100%; */
+  min-height: 100vh;
   background-size: cover;
   background-image: url(https://giffiles.alphacoders.com/211/211931.gif);
   display: flex;
@@ -75,7 +207,7 @@ a {
   background-color: rgba(0,0,0,0.4);
 }
 .main-content {
-  min-height: 100%;
+  /* min-height: 100%; */
   /* background-color: red; */
 }
 .landing-scroll-btn {
@@ -94,11 +226,15 @@ a {
   margin: 0;
 }
 .main-content {
-  /* background-color: #190f36; */
-  background-image: url('https://i.pinimg.com/originals/0f/88/3e/0f883e6f5db348671c1e26a7dfd2e5f3.gif');
+  --bg-color: #190f36;
+  background-color: var(--bg-color);
+  /* background-image: url('https://i.pinimg.com/originals/0f/88/3e/0f883e6f5db348671c1e26a7dfd2e5f3.gif'); */
+  /* background-image: url('https://wtop.com/wp-content/uploads/2020/07/MW-SUMMER-TRIANGLE-BM.jpg'); */
+  /* background-image: url('https://images.wallpapersden.com/image/download/cyberpunk-2077-samurai_bGpqa2mUmZqaraWkpJRnbWllrWdtaWU.jpg'); */
   background-size: cover;
-  padding: 180px 0;
+  padding: 230px 0 130px 0;
   position: relative;
+  transition: background-color 0.2s ease-in-out;
 }
 .content-overlay {
   position: absolute;
@@ -120,10 +256,11 @@ a {
 .content-para {
   color: #e9f031;
   text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22;
+  line-height: 2;
   /* margin: 0 calc((100% - 1375px)/2) */
 }
 .content-cards {
-  margin: 128px 0 0 0;
+  margin: 128px 0 128px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -344,3 +481,220 @@ a {
 .content-card:hover .card-img {
   display: block;
 }
+.para-hover:hover {
+  /* color: #eb1024; */
+  text-shadow: 0px 0px 15px #f7db22, 0px 0px 45px #f7db22, 0px 0px 65px #f7db22;
+}
+.content-samurai-path {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('https://i.pinimg.com/originals/7d/a9/66/7da9666eec2f65d04ee206b06d588699.png'); */
+  opacity: 0;
+  background-size: cover;
+  /* transition: opacity 3s linear; */
+  /* animation: changeBg 2s 1 normal; */
+}
+.content-samurai-path::after, .content-samurai-path::before {
+  --left: 0;
+  --top: 0;
+  --v-height: 30%;
+  --f-size: 15;
+
+  --n-tenth: calc(var(--f-size) * .1 * var(--top));
+  --t-cut: calc(var(--n-tenth) / var(--f-size) * 100%);
+  --b-cut: calc(var(--t-cut) + var(--v-height));
+  
+  content: url("https://www.modscyberpunk2077.com/wp-content/uploads/2020/12/samurai-logo-as-icon-for-cyberpunk-2077-1.png");
+  position: absolute;
+  /* margin-bottom: 75px; */
+  margin-top: 205px;
+  transform: translateX(calc(var(--left)* 10%));
+
+  clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
+}
+.content-samurai-path::after {
+  animation: transformBeforeImg 3s infinite alternate-reverse;
+}
+.content-samurai-path::before {
+  animation: transformBeforeImg 3s infinite reverse;
+}
+.samurai-path-img {
+  /* margin-bottom: 80px; */
+  max-width: 500px;
+  margin-top: 210px;
+}
+/* .para-hover:hover .content-samurai-path {
+  opacity: 1;
+} */
+.silverhand-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.silverhand-path .card-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 35px;
+  min-width: 175px;
+  font-size: 16px;
+}
+.silverhand-path .card-button span {
+  display: flex;
+}
+.silverhand-path-svg {
+  max-width: 30px;
+}
+.silverhand-path-svg .one, .silverhand-path-svg .two, .silverhand-path-svg .three {
+  fill: #28f9ff;
+}
+.silverhand-path .button-wrapper:hover {
+  background-color: #fd0100;
+  border: 2px solid #fd0100;
+}
+.silverhand-path .button-wrapper:hover .card-button {
+  /* border: 2px solid #dd1d4a; */
+  background-color: #fd0100;
+}
+.silverhand-path .button-wrapper:hover .silverhand-path-svg .one {
+  animation: shiftSign 1s infinite 0.3s alternate;
+}
+.silverhand-path .button-wrapper:hover .silverhand-path-svg .two {
+  animation: shiftSign 1s infinite 0.2s alternate;
+}
+.silverhand-path .button-wrapper:hover .silverhand-path-svg .three {
+  animation: shiftSign 1s infinite 0.1s alternate;
+} 
+.footer {
+  position: relative;
+  background-color: #d13f60;
+  padding: 36px 0;
+}
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-wrapper-span {
+  color: #06dbd8;
+  font-size: 18px;
+  /* text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 50px #28f9ff; */
+}
+.footer .footer-heading {
+  margin-top: 0;
+  color: #e9f031;
+  text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22;
+}
+.footer-wrapper-navigation {
+  min-height: 140px;
+}
+.footer-wrapper-navigation-heading {
+  color: #e9f031;
+  text-shadow: 0px 0px 10px #f7db22, 0 0 40px #f7db22;
+  margin: 0;
+}
+.footer-wrapper-map-list {
+  margin: 20px 0 0 0;
+}
+.footer-wrapper-map-list-element {
+  color: #06dbd8;
+  font-size: 18px;
+  /* text-shadow: 0px 0px 35px #06dbd8; */
+}
+.footer-wrapper-map-list-element:hover {
+  text-shadow: 0px 0px 15px #06dbd8, 0px 0px 35px #06dbd8;
+}
+.footer-wrapper-map-list-element-anchor {
+  color: #06dbd8;
+}
+.footer .footer-list {
+  margin: 20px 0 0 0;
+  display: flex;
+}
+.footer-list-element {
+  position: relative;
+}
+.footer-list-element:not(:last-of-type) {
+  margin-right: 25px;
+}
+/* .footer-list-element:hover {
+  color: #06dbd8;
+  text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 60px #28f9ff;
+} */
+.footer-list-element .logo {
+  font-size: 40px;
+  position: relative;
+  color: #252625;
+  transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+}
+.footer-list-element::before {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 900;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  font-size: 40px;
+  height: 0;
+  overflow: hidden;
+  /* z-index: 2; */
+  border-bottom: 2px solid transparent;
+  transition: height 0.5s ease-in-out;
+}
+.footer-list-element:nth-child(1)::before {
+  content: '\f3fe';
+  /* color: #06dbd8; */
+  /* border-bottom: 2px solid transparent; */
+}
+.footer-list-element:nth-child(2)::before {
+  content: '\f189';
+  /* color: #06dbd8; */
+  /* border-bottom: 2px solid #06dbd8; */
+}
+.footer-list-element:nth-child(3)::before {
+  content: '\f099';
+  /* color: #06dbd8; */
+  /* border-bottom: 2px solid #06dbd8; */
+}
+.footer-list-element:nth-child(4)::before {
+  content: '\f09b';
+  /* color: #06dbd8; */
+  /* border-bottom: 2px solid #06dbd8; */
+}
+.footer-list-element:hover::before {
+  height: 100%;
+}
+/* .footer-list-element:hover .logo {
+  color: #06dbd8;
+  text-shadow: 0px 0px 10px #28f9ff, 0 0 40px #28f9ff, 0 0 50px #28f9ff;
+} */
+.footer-list-element:nth-child(1):hover::before {
+  border-bottom: 2px solid #33adff;
+}
+.footer-list-element:nth-child(1):hover .logo, .footer-list-element:nth-child(2):hover .logo {
+  color: #1e96c8;
+}
+.footer-list-element:nth-child(2):hover::before {
+  border-bottom: 2px solid #33adff;
+  /* color: #1e96c8; */
+}
+.footer-list-element:nth-child(3):hover .logo {
+  color: #33adff;
+}
+.footer-list-element:nth-child(3):hover::before {
+  border-bottom: 2px solid #33adff;
+}
+.footer-list-element:nth-child(4):hover .logo {
+  color: #33adff;
+}
+.footer-list-element:nth-child(4):hover::before {
+  border-bottom: 2px solid #33adff;
+}
+/* .footer-list-element .footer-anchor {
+  color: ;
+} */
