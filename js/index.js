@@ -1,5 +1,5 @@
 cards.forEach((card) => {
-  const tiltingCard = new TiltEffect(card, 500, 25);
+  const tiltingCard = new TiltEffect(card, 500, 25, mainContentSection);
   tiltingCard.card.addEventListener('mousemove', (evt) => {
     tiltingCard.initiateTiltEffectOnHover(evt);
   })
